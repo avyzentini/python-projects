@@ -1,0 +1,27 @@
+import tweepy
+from tweepy import OAuthHandler
+
+consumer_key = 'KET3EbPWgX7z7fObXBa0U7KIl'
+consumer_secret = 'mJsG8t8er5uRLgHVXicVdcUR9QS0n295tC16Fo2YJx4u8w6wFE'
+access_token = '400933129-KzSfqgdGV3klkd1cL7IbH1gNDlDXrP0rp3oKHkij'
+access_secret = 'suJImhCqvKcw4i3sAQAxmu62cuxGJ1ZgEJXD3AVP1wfUJ'
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_secret)
+api = tweepy.API(auth)
+user=raw_input("Give first username: ")
+fol1=api.followers_ids(user,-1)
+i=len(fol1)
+
+user2=raw_input("Give second username: ")
+fol2=api.followers_ids(user2,-1)
+j=len(fol2)
+mf=[]
+q=False
+for k in range (0,i):
+    for x in range(0,j):
+        if fol1[k]==fol2[x]:
+            mf=api.get_user(fol1[k])
+            print mf.screen_name
+            q=True
+if q==False:
+    print "No mutual followers"
