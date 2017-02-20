@@ -10,7 +10,7 @@ for i in range(1,1001):
 
     if i%sum==0:
         list1.append(i)
-    if ginomeno&i==0:
+    if ginomeno%i==0:
         list2.append(i)
 print "First 1000 Harshad numbers:\n",list1
 print "\n"
