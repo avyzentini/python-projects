@@ -1,0 +1,21 @@
+list1=[]
+list2=[]
+for i in range(1,1001):
+    num = str(i)
+    sum = 0
+    ginomeno=1
+    for j in range(0, len(num)):
+        sum += int(num[j])
+        ginomeno= ginomeno*int(num[j])
+
+    if i%sum==0:
+        list1.append(i)
+
+    if ginomeno!=0:
+        if i%ginomeno==0:
+            list2.append(i)
+
+
+print "First 1000 Harshad numbers:\n",list1
+print "\n"
+print "Numbers until 1000 that are divided by the product of their digits: \n", list2
