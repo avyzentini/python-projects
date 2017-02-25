@@ -1,0 +1,10 @@
+list1=raw_input("Give a list separated by commas:").split(",")
+b=len(list1)
+c=0
+for i in range(b):
+    if list1[i]=="0":
+        c=c+1
+while "0" in list1: list1.remove("0")
+for i in range (c):
+    list1.append("0")
+print list1
